@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c120e">
+<meta name="description" content="Generation of the Spirit: a family committed to the Gospel of Jesus Christ, the Word, prayer, purity and discipleship.">
+<title>Generation of the Spirit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap">
+<style>
+:root{--bg:#0c120e;--panel:#141e17;--cream:#f5f2e9;--muted:#b7c2b7;--line:rgba(236,240,226,.14);--gold:#d9bd83;--green:#a9c2a2;--max:1160px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;line-height:1.65;letter-spacing:.005em}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(12,18,14,.94);border-bottom:1px solid rgba(217,189,131,.18)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative}
+.brand{font-weight:700;letter-spacing:.075em;font-size:12px}
+.navlinks{display:flex;gap:25px;color:var(--muted);font-size:13px}
+.navlinks a:hover{color:var(--gold)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--cream);padding:10px 14px;border-radius:8px;min-height:44px;cursor:pointer}
+.hero{position:relative;overflow:hidden;min-height:610px;display:flex;align-items:center;padding:105px 0 92px;background:radial-gradient(ellipse at 82% 44%,rgba(105,139,98,.19),transparent 36%),radial-gradient(ellipse at 12% 100%,rgba(217,189,131,.07),transparent 42%),linear-gradient(120deg,#0d1510 0%,#17231a 55%,#101812 100%);border-bottom:1px solid var(--line)}
+.hero:after{content:"";position:absolute;width:520px;height:520px;right:-150px;top:50%;transform:translateY(-50%);border:1px solid rgba(217,189,131,.16);border-radius:50%;box-shadow:0 0 0 48px rgba(217,189,131,.025),0 0 0 96px rgba(217,189,131,.018),0 0 0 144px rgba(217,189,131,.012);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(48px,7.5vw,96px);line-height:1.04;letter-spacing:-.045em;font-weight:500;max-width:900px;margin:22px 0}
+.hero h1 em{color:#b5c9a9;font-weight:500}
+.lead{max-width:610px;color:#c6cec4;font-size:16px;line-height:1.85}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 22px;border-radius:3px;font-size:13px;font-weight:700;letter-spacing:.02em;transition:.2s}
+.primary{background:var(--gold);color:#172018}
+.primary:hover{background:#e7d19c}
+.secondary{border:1px solid rgba(243,240,231,.28);color:var(--cream)}
+.secondary:hover{border-color:var(--gold);color:var(--gold)}
+.hero-note{margin-top:52px;color:#9eab9e;font-size:12px;letter-spacing:.08em}
+.next{background:#142019;border-bottom:1px solid var(--line)}
+.next-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 48px;padding:34px 0}
+.next-main{display:flex;flex-direction:column;gap:6px}
+.next-date{font-family:'Playfair Display',serif;font-size:clamp(30px,4.4vw,48px);line-height:1.1;font-weight:500}
+.next-meta{display:flex;flex-wrap:wrap;gap:6px 36px;color:var(--muted);font-size:14px}
+.next-meta strong{color:var(--cream);font-weight:600}
+.study-strip{background:#d9bd83;color:#172018;border-bottom:1px solid #f1dfb9}
+.study-strip-inner{min-height:78px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;padding:14px 0}
+.study-strip-inner>div:first-child{display:flex;flex-direction:column;line-height:1.35}
+.study-kicker{font-size:10px;letter-spacing:.18em;font-weight:700}
+.study-strip strong{font-size:13px;letter-spacing:.07em}
+.study-time{font-family:'Playfair Display',serif;font-size:21px}
+.study-strip a{font-size:12px;font-weight:700;border-bottom:1px solid #172018;padding-bottom:3px}
+section{padding:100px 0;border-bottom:1px solid var(--line)}
+.section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 28px;margin-bottom:44px}
+.section-head h2{font-family:'Playfair Display',serif;font-size:clamp(34px,4.5vw,52px);font-weight:500;line-height:1.12;letter-spacing:-.025em;margin:10px 0 0}
+.section-head p{max-width:430px;color:var(--muted);font-size:14px;margin:0}
+.welcome-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:start}
+.welcome-copy{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,34px);line-height:1.42}
+.welcome-copy em{color:var(--green)}
+.small-copy{color:var(--muted);font-size:14px;max-width:490px}
+.identity{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.identity-card{padding:26px;background:linear-gradient(145deg,#17231b,#121b15);border:1px solid rgba(217,189,131,.13);min-height:190px}
+.identity-card .num{color:var(--gold);font-size:11px;letter-spacing:.15em}
+.identity-card h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:500;margin:13px 0 8px}
+.identity-card p{font-size:13px;color:var(--muted);margin:0}
+.motto{grid-column:1/-1;background:linear-gradient(110deg,#202e24,#17221a);border-left:3px solid var(--gold);padding:24px 28px}
+.motto p{font-family:'Playfair Display',serif;font-size:22px;margin:0}
+.motto small{display:block;color:var(--gold);font-size:11px;letter-spacing:.17em;margin-top:9px;text-transform:uppercase}
+.rules{display:flex;flex-wrap:wrap;gap:40px 55px}
+.rules-intro{flex:1 1 280px;min-width:0}
+.rules-intro h2{font-family:'Playfair Display',serif;font-size:clamp(34px,4.5vw,52px);font-weight:500;line-height:1.12;letter-spacing:-.025em;margin:10px 0 18px}
+.rules-intro p{color:var(--muted);font-size:14px}
+.rule-list{flex:1.5 1 380px;min-width:0;border-top:1px solid var(--line)}
+.rule{border-bottom:1px solid var(--line)}
+.rule button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;background:none;color:var(--cream);border:0;padding:22px 0;cursor:pointer;font-size:16px;font-weight:600;min-height:44px}
+.rule button span:first-child{display:flex;align-items:center;gap:16px}
+.rule-num{font-size:11px;color:var(--gold);letter-spacing:.1em}
+.plus{font-size:22px;color:var(--gold);font-weight:400;transition:transform .2s}
+.rule-content{display:none;color:var(--muted);font-size:14px;line-height:1.8;padding:0 36px 20px 39px;max-width:650px}
+.rule.open .rule-content{display:block}
+.rule.open .plus{transform:rotate(45deg)}
+.growth{background:linear-gradient(140deg,#17231b,#0f1712)}
+.growth-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.growth-card{padding:28px 24px;border:1px solid rgba(217,189,131,.17);background:rgba(255,255,255,.025)}
+.growth-card .symbol{font-size:23px;color:var(--gold)}
+.growth-card h3{font-family:'Playfair Display',serif;font-size:23px;font-weight:500;margin:14px 0 8px}
+.growth-card p{font-size:14px;color:var(--muted);margin:0}
+.scripture{margin-top:28px;padding:25px 28px;border:1px solid rgba(217,189,131,.28);background:rgba(217,189,131,.035);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px}
+.scripture p{font-family:'Playfair Display',serif;font-size:21px;margin:0}
+.scripture span{color:var(--gold);font-size:11px;letter-spacing:.1em}
+.contact-grid{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.contact-panel{flex:1.1 1 340px;min-width:0;background:linear-gradient(145deg,#19261d,#131d16);padding:34px;border:1px solid rgba(217,189,131,.2)}
+.contact-panel h3{font-family:'Playfair Display',serif;font-size:30px;font-weight:500;margin:10px 0}
+.contact-panel p{color:var(--muted);font-size:14px}
+.contact-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.contact-links .btn{min-width:150px}
+.contact-details{flex:.9 1 320px;min-width:0}
+.contact-detail{padding:17px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 15px;font-size:14px}
+.contact-detail span:first-child{color:var(--muted)}
+.contact-detail strong{font-weight:600}
+footer{padding:34px 0 42px;border-top:1px solid rgba(217,189,131,.12);background:#0a100c}
+.footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+.signature{color:var(--gold);letter-spacing:.12em;font-size:12px;font-weight:700}
+.footer-note{font-size:12px;color:#9aa89b;margin:12px 0 0}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 36px)}
+ .nav{height:70px}
+ .navlinks{display:none;position:absolute;top:70px;left:-18px;right:-18px;background:#101912;padding:20px 18px;border-bottom:1px solid var(--line);flex-direction:column;gap:16px}
+ .navlinks.show{display:flex}
+ .menu{display:block}
+ .hero{min-height:560px;padding:88px 0 76px}
+ .hero:after{width:300px;height:300px;right:-190px;top:24%}
+ section{padding:76px 0}
+}
+@media(max-width:420px){.hero h1{font-size:clamp(42px,12vw,52px)}.hero-actions .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav">
+<a class="brand" href="#home">GENERATION OF THE SPIRIT</a>
+<nav class="navlinks" id="navlinks">
+<a href="#identity">Our heart</a>
+<a href="#gatherings">Gatherings</a>
+<a href="#bible-study">Bible study</a>
+<a href="#rules">Group rules</a>
+<a href="#growth">Spiritual growth</a>
+<a href="#connect">Connect</a>
+</nav>
+<button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">Menu</button>
+</div></header>
+
+<main id="home">
+<div class="hero"><div class="wrap">
+<div class="eyebrow">A family of love · A people of the Word</div>
+<h1>Welcome to<br><em>Generation of the Spirit.</em></h1>
+<p class="lead">A warm welcome to this family of love. We are glad to have you here. May our fellowship help you grow in the knowledge of Christ and in the life He has called us to live.</p>
+<div class="hero-actions"><a class="btn primary" href="#gatherings">See the next gathering</a><a class="btn secondary" href="#identity">Discover our family</a></div>
+<div class="hero-note">LOVE · PURITY · THE WORD · PRAYER · CHRIST</div>
+</div></div>
+
+<div class="next" id="gatherings"><div class="wrap next-inner">
+<div class="next-main">
+<div class="eyebrow">Next fasting and prayer</div>
+<div class="next-date">28 to 30 November 2026</div>
+</div>
+<div class="next-meta">
+<span>Days <strong>Saturday to Monday</strong></span>
+<span>Daily hours <strong>6AM to 6PM</strong></span>
+</div>
+</div></div>
+
+<div class="study-strip" id="bible-study"><div class="wrap study-strip-inner">
+<div><span class="study-kicker">ONLINE BIBLE STUDY</span><strong>MONDAYS &amp; FRIDAYS</strong></div>
+<div class="study-time">9:45 PM — 10:45 PM GMT</div>
+<a href="https://chat.whatsapp.com/GjQYO6vTcnf3ac7ljacUHE?mode=gi_t" target="_blank" rel="noopener">Join the gathering ↗</a>
+</div></div>
+
+<section id="identity"><div class="wrap">
+<div class="section-head"><div><div class="eyebrow">Who we are</div><h2>Our heart and calling.</h2></div><p>We are a Generation of the Spirit: a people committed to actualising the will of God by the help of the Holy Spirit.</p></div>
+<div class="welcome-grid">
+<div><div class="welcome-copy">“We love and celebrate you. <em>You belong to a family</em> that desires to see Jesus formed in every life.”</div><p class="small-copy">Our fellowship is centred on Jesus Christ, the living and enduring Word of God, prayer, purity, discipleship and a life that reflects Him.</p></div>
+<div class="identity">
+<div class="identity-card"><div class="num">01 / MISSION</div><h3>Our Mission</h3><p>To preach the Gospel of Jesus Christ to all creation and make disciples. <strong>Mark 16:15; Matthew 28:19–20.</strong></p></div>
+<div class="identity-card"><div class="num">02 / VISION</div><h3>Our Vision</h3><p>To present every man — male and female — approved before God, through the living and enduring Word of God.</p></div>
+<div class="motto"><p>“Jesus must be seen and Jesus must be heard.”</p><small>Our conviction</small></div>
+</div></div>
+</div></section>
+
+<section id="rules"><div class="wrap rules">
+<div class="rules-intro"><div class="eyebrow">Life together</div><h2>Our group rules.</h2><p>To keep this family edifying, peaceful and centred on Christ, every member is asked to observe these guidelines.</p><p>Let love lead in all that we do.</p></div>
+<div class="rule-list">
+<div class="rule open"><button aria-expanded="true"><span><span class="rule-num">01</span> LOVE</span><span class="plus">+</span></button><div class="rule-content">Respect and love one another. Let love lead. John 13:34.</div></div>
+<div class="rule"><button aria-expanded="false"><span><span class="rule-num">02</span> PURITY</span><span class="plus">+</span></button><div class="rule-content">No posting of nude pictures, videos, stickers, or any immoral content.</div></div>
+<div class="rule"><button aria-expanded="false"><span><span class="rule-num">03</span> ADVERT PLACEMENT</span><span class="plus">+</span></button><div class="rule-content">No advertising, business adverts, investment links, or content contradicting the Gospel of Christ. Please use the Discussion Group in the community for advertisement.</div></div>
+<div class="rule"><button aria-expanded="false"><span><span class="rule-num">04</span> INTERACT</span><span class="plus">+</span></button><div class="rule-content">Feel free to bless us with messages, prayers, scriptures and contents that will help our spiritual growth.</div></div>
+<div class="rule"><button aria-expanded="false"><span><span class="rule-num">05</span> PEACE</span><span class="plus">+</span></button><div class="rule-content">No arguments, insults, or quarrels. We are one in Christ.</div></div>
+<div class="rule"><button aria-expanded="false"><span><span class="rule-num">06</span> BE BORN AGAIN</span><span class="plus">+</span></button><div class="rule-content">Receive Jesus Christ as your Lord and Saviour. If you haven't, you can kindly reach out to us using the contact details below.</div></div>
+</div></div></section>
+
+<section class="growth" id="growth"><div class="wrap">
+<div class="section-head"><div><div class="eyebrow">Growing together</div><h2>A life shaped by Christ.</h2></div><p>We are committed to grooming men and women in the practices and character of the Lord Jesus.</p></div>
+<div class="growth-grid">
+<div class="growth-card"><div class="symbol">✧</div><h3>Prayer</h3><p>Growing in communion with God and learning to depend on Him in every season.</p></div>
+<div class="growth-card"><div class="symbol">⌁</div><h3>The Word of God</h3><p>Studying, understanding and living by the Scriptures — the living and enduring Word.</p></div>
+<div class="growth-card"><div class="symbol">◌</div><h3>Fasting</h3><p>Setting ourselves apart to seek God with sincerity, humility and spiritual focus.</p></div>
+</div>
+<div class="scripture"><p>“Jesus must be seen and Jesus must be heard.”</p><span>THE LIFE OF JESUS</span></div>
+</div></section>
+
+<section id="connect"><div class="wrap">
+<div class="section-head"><div><div class="eyebrow">Stay connected</div><h2>We would love to hear from you.</h2></div><p>Stay connected to the fellowship, join our online gatherings and reach out if you need guidance or prayer.</p></div>
+<div class="contact-grid">
+<div class="contact-panel"><div class="eyebrow">You are welcome here</div><h3>Come grow with us.</h3><p>We love you, we celebrate you. Stay blessed and stay on fire. God bless you.</p>
+<div class="contact-links">
+<a class="btn primary" href="https://chat.whatsapp.com/GjQYO6vTcnf3ac7ljacUHE?mode=gi_t" target="_blank" rel="noopener">Join WhatsApp ↗</a>
+<a class="btn secondary" href="https://meet.google.com/whq-zabw-coh" target="_blank" rel="noopener">Google Meet ↗</a>
+<a class="btn secondary" href="https://t.me/boost/Generationofthespirit" target="_blank" rel="noopener">Telegram ↗</a>
+</div></div>
+<div class="contact-details">
+<div class="contact-detail"><span>Next fasting and prayer</span><strong>28 to 30 November 2026, 6AM to 6PM</strong></div>
+<div class="contact-detail"><span>Online Bible study</span><strong>9:45 PM – 10:45 PM GMT</strong></div>
+<div class="contact-detail"><span>Regular meeting days</span><strong>Mondays &amp; Fridays</strong></div>
+<div class="contact-detail"><span>Meet code</span><strong>whq-zabw-coh</strong></div>
+<div class="contact-detail"><span>Founder</span><strong>Ushahemba Keren</strong></div>
+<div class="contact-detail"><span>Enquiries / prayer</span><strong><a href="tel:09118171878">09118171878</a></strong></div>
+</div>
+</div></div></section>
+</main>
+
+<footer><div class="wrap footer-row"><div><div class="brand">GENERATION OF THE SPIRIT</div><div class="footer-note">Actualising the will of God, by the help of the Holy Spirit.</div></div><div class="signature">YAHWEH’S HAND</div></div></footer>
+
+<script>
+// Mobile menu
+const menu = document.getElementById('menu');
+const nav = document.getElementById('navlinks');
+menu.addEventListener('click', () => {
+  const open = nav.classList.toggle('show');
+  menu.setAttribute('aria-expanded', String(open));
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('show');
+  menu.setAttribute('aria-expanded', 'false');
+}));
+
+// Group rules accordion
+document.querySelectorAll('.rule button').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+    const open = item.classList.toggle('open');
+    button.setAttribute('aria-expanded', String(open));
+  });
+});
+</script>
+</body>
+</html>
